@@ -538,7 +538,7 @@ const Chat = () => {
     };
 
     fetchGroupMessages();
-  }, [selectedGroupId]);
+  }, [selectedGroupId,token]);
 
   const uploadFiles = async () => {
     const formData = new FormData();
@@ -1431,9 +1431,9 @@ const Chat = () => {
                 </div>
               </div>
 
-              {/* <div className={style.stopbutton} title="Stop" onClick={stopScreenShare}>
+           <div className={style.stopbutton} title="Stop" onClick={stopScreenShare}>
               <MdStopCircle style={{ color: "red", fontSize: "14px" }} />
-          </div> */}
+          </div> 
             </div>
           )}
 
