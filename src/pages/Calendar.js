@@ -61,7 +61,7 @@ const Calendar = () => {
         })
         .catch(console.error);
     }
-  }, [month, year, user, token]);
+  }, [month, year, user, token,currentDate]);
 
   const handleAddEvent = () => {
     if (!user?.id || !eventTitle || !selectedDate || !eventStartTime || !eventEndTime) return;
