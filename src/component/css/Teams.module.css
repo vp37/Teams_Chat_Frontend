@@ -1,0 +1,298 @@
+/* ================= BASE ================= */
+.teamscontainer {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= LEFT PANEL ================= */
+.teamheader {
+  width: 30%;
+  min-width: 260px;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-right: 1px solid #333;
+}
+
+/* ================= RIGHT PANEL ================= */
+.teamrightside {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(47, 46, 46, 0.95);
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.righttopheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+}
+
+.righttopheader h3 {
+  font-size: 16px;
+  color: white;
+}
+
+.headericons {
+  display: flex;
+  gap: 10px;
+}
+
+.cornericon {
+  border: 1px solid #444;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.cornericon:hover {
+  background: #2a2a2a;
+}
+
+/* ================= CHANNEL LIST ================= */
+.busniesscontainer {
+  margin: 8px 10px;
+  padding: 10px;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.busniesscontainer:hover {
+  background-color: #2a2a2a;
+}
+
+.busineesheader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.businessicons {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+}
+
+/* ================= ADD CHANNEL ================= */
+.addchannelcontainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 15px;
+  color: #6265c7;
+  cursor: pointer;
+}
+
+.addchannelcontainer:hover {
+  color: #888aff;
+}
+
+/* ================= TOP NAV ================= */
+.righttopcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+.navcontaineleft {
+  display: flex;
+  gap: 20px;
+}
+
+.paranav {
+  cursor: pointer;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.paranav:hover {
+  border-bottom: 2px solid white;
+}
+
+.navcontainerright {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modelcontainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #555;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modelcontainer:hover {
+  background: #2a2a2a;
+}
+
+.navbariconsleft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #555;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* ================= CENTER CONTENT ================= */
+.teamimages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
+}
+
+.teamimages img {
+  width: 150px;
+  height: 150px;
+}
+
+.teamimages p {
+  margin-top: 15px;
+}
+
+/* ================= TOGGLE CLASSES ================= */
+.show {
+  display: block;
+}
+
+.hide {
+  display: block;
+}
+
+/* ================= BACK BUTTON ================= */
+.mobileBack {
+  display: none;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .teamheader {
+    width: 35%;
+  }
+
+  .teamrightside {
+    width: 65%;
+  }
+
+  .navcontaineleft {
+    gap: 10px;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .teamscontainer {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  /* Toggle behavior */
+  .show {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  /* Left panel */
+  .teamheader {
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+  }
+
+  /* Right panel */
+  .teamrightside {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Back button */
+  .mobileBack {
+    display: block;
+    padding: 10px;
+    background: #2a2a2a;
+    border-bottom: 1px solid #444;
+    cursor: pointer;
+  }
+
+  /* Stack navbar */
+  .righttopcontainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navcontaineleft {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .navcontainerright {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .teamimages img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .righttopheader h3 {
+    font-size: 14px;
+  }
+
+  .busniesscontainer {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .teamimages img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .paranav {
+    font-size: 12px;
+  }
+}

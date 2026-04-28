@@ -1,0 +1,33 @@
+.layoutContainer {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .mainContent {
+    flex: 1;
+    margin-left: 50px;         
+    margin-top: 30px;          
+    padding: 20px;
+    overflow-y: auto;
+    background-color:black;
+    /* border-radius:10px; */
+    overflow: hidden;
+   
+   
+  }
+@media screen and (max-width: 768px) {
+
+  .layoutContainer {
+    flex-direction: column;
+  }
+
+  .mainContent {
+    margin-left: 0;        /* remove sidebar space */
+    margin-top: 40px;     
+    width: 100%;
+    padding: 15px;
+  }
+}
+  
+  

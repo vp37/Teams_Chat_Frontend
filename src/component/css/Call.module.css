@@ -1,0 +1,278 @@
+.calendarWrapper {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background-color: #1e1e1e;
+  color: white;
+  font-family: "Segoe UI", sans-serif;
+  overflow: hidden;
+}
+
+/* ================= SIDEBAR ================= */
+.calendarSidebar {
+  width: 260px;
+  min-width: 220px;
+  padding: 20px;
+  background-color: #202124;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #333;
+  overflow-y: auto;
+}
+
+/* Month Header */
+.monthHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.monthHeader button {
+  background-color: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Days */
+.dayHeaders {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  text-align: center;
+  color: #ccc;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.dayHeader {
+  padding: 4px 0;
+}
+
+/* Dates */
+.dateGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.dateCell {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dateCell:hover {
+  background-color: #2d2d2d;
+}
+
+.activeMonth {
+  color: #eee;
+}
+
+.inactiveMonth {
+  color: #666;
+  opacity: 0.4;
+}
+
+.todayDate {
+  background-color: #8f85ff;
+  font-weight: bold;
+  color: white !important;
+}
+
+/* ================= MAIN CALENDAR ================= */
+.calendarMain {
+  flex: 1;
+  padding: 20px;
+  background-color: #181818;
+  overflow: hidden;
+}
+
+/* Fix react-big-calendar responsiveness */
+.calendarMain .rbc-calendar {
+  height: 100% !important;
+  min-height: 500px;
+}
+
+.calendarMain .rbc-toolbar {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.calendarMain .rbc-toolbar-label {
+  font-size: 16px;
+}
+
+/* ================= MODAL ================= */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background: #2a2a2a;
+  padding: 24px;
+  border-radius: 10px;
+  width: 320px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modalContent h3 {
+  margin: 0;
+  color: #fff;
+}
+
+.modalContent input {
+  padding: 8px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background: #444;
+  color: white;
+  width: 100%;
+}
+
+.modalContent input::placeholder {
+  color: #ccc;
+}
+
+.modalContent button {
+  padding: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  background: #8f85ff;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.modalContent button:hover {
+  background: #a49bff;
+}
+
+/* Delete icon */
+.deleteIcon {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .calendarSidebar {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .calendarMain {
+    padding: 15px;
+  }
+
+  .monthHeader {
+    font-size: 14px;
+  }
+
+  .dateCell {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .calendarWrapper {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* Sidebar moves to TOP */
+  .calendarSidebar {
+    width: 100%;
+    min-width: 100%;
+    flex-direction: column;
+    border-right: none;
+    border-bottom: 1px solid #333;
+    padding: 10px;
+  }
+
+  .monthHeader {
+    justify-content: space-between;
+    font-size: 14px;
+  }
+
+  .dayHeaders {
+    font-size: 12px;
+  }
+
+  .dateGrid {
+    gap: 4px;
+  }
+
+  .dateCell {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  /* Calendar below sidebar */
+  .calendarMain {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .calendarMain .rbc-calendar {
+    min-height: 400px;
+  }
+
+  .calendarMain .rbc-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendarMain .rbc-toolbar-label {
+    font-size: 14px;
+  }
+
+  /* Modal mobile */
+  .modalContent {
+    width: 90%;
+    padding: 16px;
+  }
+}
+
+/* ================= SMALL MOBILE ================= */
+@media (max-width: 480px) {
+  .monthHeader span {
+    font-size: 13px;
+  }
+
+  .dateCell {
+    font-size: 11px;
+  }
+
+  .calendarMain .rbc-toolbar-label {
+    font-size: 12px;
+  }
+}

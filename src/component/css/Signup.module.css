@@ -1,0 +1,105 @@
+.signupcontainer {
+  width: 100%;
+  max-width: 450px;
+  margin: 60px auto;
+  padding: 35px 30px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topheader {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.topheader h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  font-size: 15px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.errorInput {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 6px rgba(231, 76, 60, 0.3);
+}
+
+.errormsg {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: -12px;
+  margin-bottom: 14px;
+  padding-left: 4px;
+}
+
+button {
+  padding: 12px;
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: #3b7ac9;
+}
+
+button:disabled {
+  background-color: #a1c2f0;
+  cursor: not-allowed;
+}
+
+.loginRedirect {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.loginRedirect span {
+  color: #4a90e2;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .signupcontainer {
+    margin: 30px 20px;
+    padding: 25px 20px;
+  }
+
+  form input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+}
